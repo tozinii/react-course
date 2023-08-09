@@ -26,3 +26,33 @@ function multiplyNumbers(number1, number2){
     return number1 * number2;
 }
 const arrowFuncMultiplyNumbers = (number1, number2) => number1 * number2;
+
+
+//Objects
+const user = {
+    name: 'Iker',
+    age: '27',
+    greet(userName) {
+        console.log('Hi, ' + userName + ' you are ' + this.age + ' years old!!');
+    }
+};
+
+console.log(user);
+console.log(user.name);
+user.greet(user.name);
+
+//Define object via class
+class User {
+
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet(userName) {
+        console.log('Hi, ' + userName + ' you are ' + this.age + ' years old!!');
+    }
+
+}
+const user1 = new User('Imanol', 35);
+console.log(user1);
