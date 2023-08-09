@@ -67,3 +67,38 @@ console.log(hobbies[3]);
 console.log(hobbies.findIndex((item) => item === "padel"));
 console.log(hobbies.map((item) => item + '!'));
 console.log(hobbies.map((item) => ({text: item})));
+
+//Desctructuring arrays an objects
+//Arrays
+const [firstName, lastName] = ['Iker', 'Apaolaza'];
+console.log(firstName);
+console.log(lastName);
+
+//Objects
+//name is referenced to alias 'rName' and same with age
+const {name: rName, age: rAge} = {
+    name: 'Ricardo',
+    age: 27
+};
+console.log(rName);
+console.log(rAge);
+
+//Spread operator
+const hobbies1 = ['hobbie1', 'hobbie2'];
+const hobbies2 = ['hobbie3'];
+const hobbies3 = ['hobbie4', 'hobbie5'];
+const userAdmin = {
+    name: 'Ricardo',
+    age: 27
+};
+
+//The three dots merge all items of the arrays given into one array
+const mergedHobbies =  [...hobbies1, ...hobbies2, ...hobbies3];
+console.log(mergedHobbies);
+
+//Same in objects
+const extendedUser = {
+    isAdmin: true,
+    ...userAdmin
+};
+console.log(extendedUser);
