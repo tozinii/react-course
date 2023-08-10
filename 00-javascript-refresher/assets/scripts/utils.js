@@ -102,3 +102,22 @@ const extendedUser = {
     ...userAdmin
 };
 console.log(extendedUser);
+
+//Functions as values
+setTimeout(() => {
+    console.log('logging this after 3 seconds');
+}, 3000);
+
+function setTimeoutAction(){
+    console.log('Timeout action');
+}
+
+//To pass a created function as parameter, do it without the '()', 
+//otherwise, it will execute the code inside it and pass the return object as parameter
+setTimeout(setTimeoutAction, 6000);
+
+//Creating a function that receives a function parameter and execute it
+function greeter(greetFn){
+    greetFn();
+}
+greeter(() => console.log('greeter function'));
