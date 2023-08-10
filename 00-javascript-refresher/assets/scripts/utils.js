@@ -121,3 +121,14 @@ function greeter(greetFn){
     greetFn();
 }
 greeter(() => console.log('greeter function'));
+
+//Define functions inside functions
+function init(){
+
+    function initGreet(){
+        console.log('init greet');
+    }
+    initGreet();
+}
+
+init();
