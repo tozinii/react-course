@@ -7,8 +7,20 @@ const NewExpenseForm = (props) => {
     const [newExpenseAmount, setNewExpenseAmount] = useState();
     const [newExpenseDate, setNewExpenseDate] = useState();
 
+    /* USING ONE STATE INSTEAD OF ONE PER VARIABLE EXAMPLE: Prefer using one per variable, its easier*/
+    /*const [userInput, setUserInput] = useState({
+        newExpenseTitle: '',
+        newExpenseAmount: '',
+        newExpenseDate: ''
+    });*/
+
     const titleChangeHandler = (e) => {
         setNewExpenseTitle(e.target.value);
+
+        /*setUserInput({
+            ...userInput,
+            newExpenseTitle: e.target.value            
+        });*/
     };
     const amountChangeHandler = (e) => {
         setNewExpenseAmount(e.target.value);
