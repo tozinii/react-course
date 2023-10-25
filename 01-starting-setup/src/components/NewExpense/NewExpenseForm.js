@@ -4,8 +4,8 @@ import './NewExpenseForm.css';
 const NewExpenseForm = (props) => {
 
     const [newExpenseTitle, setNewExpenseTitle] = useState('');
-    const [newExpenseAmount, setNewExpenseAmount] = useState();
-    const [newExpenseDate, setNewExpenseDate] = useState();
+    const [newExpenseAmount, setNewExpenseAmount] = useState('');
+    const [newExpenseDate, setNewExpenseDate] = useState('');
 
     /* USING ONE STATE INSTEAD OF ONE PER VARIABLE EXAMPLE: Prefer using one per variable, its easier*/
     /*const [userInput, setUserInput] = useState({
@@ -29,8 +29,20 @@ const NewExpenseForm = (props) => {
         setNewExpenseDate(e.target.value);
     };
 
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        let expenseData = {
+            title: newExpenseTitle,
+            amount: newExpenseAmount,
+            date : newExpenseDate
+        };
+
+        console.log(expenseData);
+    }
+
     return(
-        <form>
+        <form onSubmit={handleFormSubmit}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
