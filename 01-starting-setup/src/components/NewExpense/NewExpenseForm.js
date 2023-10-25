@@ -32,13 +32,13 @@ const NewExpenseForm = (props) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        let expenseData = {
+        let newExpenseData = {
             title: newExpenseTitle,
             amount: newExpenseAmount,
             date : new Date(newExpenseDate)
         };
 
-        console.log(expenseData);
+        props.onSaveNewExpense(newExpenseData)
 
         setNewExpenseTitle('');
         setNewExpenseAmount('');
