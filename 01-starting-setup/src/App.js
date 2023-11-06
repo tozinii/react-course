@@ -30,12 +30,10 @@ const App = () => {
 
   // Add new expenses based on previous state array.
   const addNewExpenseHandler = (newExpense) => {
-    console.log(expenses);
     setExpenses(prevExpenses =>  {
       return [newExpense, ...prevExpenses];
     });
-
-    console.log(expenses);
+    
 }
 
   return (
