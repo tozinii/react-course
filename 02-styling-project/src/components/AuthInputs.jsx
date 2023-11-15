@@ -24,18 +24,18 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</label>{/*Use this to add permanent and condional styles at same time*/}
           <input
             type="email"
-            className={emailNotValid ? 'invalid' : undefined}
+            className={emailNotValid ? 'invalid' : undefined}//Important set undefined if condition isnt true
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
         <p>
-          <label>Password</label>
+          <label className={`label ${passwordNotValid ? 'invalid' : ''}`}>Password</label>{/*Use this to add permanent and condional styles at same time*/}
           <input
             type="password"
-            className={passwordNotValid ? 'invalid' : undefined}
+            className={passwordNotValid ? 'invalid' : undefined}//Important set undefined if condition isnt true
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }
